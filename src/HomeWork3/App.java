@@ -26,7 +26,7 @@ public class App {
             } else {
                 try {
                     User user = createUser(data);
-                    System.out.println(user);
+                    //System.out.println(user);
                     writeToFile(user);
                     flag = true;
                 } catch (ConvertSexException | ConvertPhoneNumberException | ConvertDateException e) {
@@ -120,7 +120,7 @@ public class App {
     }
 
     private static void writeToFile(User user) throws IOException {
-        String path = "src\\HomeWork3\\" + user.getLastName();
+        String path = "src\\HomeWork3\\" + user.getLastName() + ".txt";
         File file = new File(path);
         FileWriter fileWriter = new FileWriter(file, true);
         fileWriter.write(user.toString() + "\n");
